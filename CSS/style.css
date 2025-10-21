@@ -36,6 +36,9 @@ body{
   max-width: 1300px!important;
 }
 
+/* ===================== NAVBAR / GLOBAL ===================== */
+/* Edit general variables, navbar, and container rules here */
+
 .navbar{
 	min-height: 90px;
 	--border-bottom-width: 1px;
@@ -110,6 +113,8 @@ body{
   height: 100vh;
   overflow: hidden;
 }
+
+/* -------------------- HERO / HOME styles -------------------- */
 
 .bg-video {
   position: absolute;
@@ -341,7 +346,8 @@ cursor
 /*      */
 /*  */
 /*  */
-
+/* -------------------- FAQ / MISC -------------------- */
+  
     .faq-title {
       font-size: 3rem;
       font-weight: 600;
@@ -482,3 +488,122 @@ width: 40px;
 .popup-content>iframe {
 padding: 0;
 }
+
+
+
+.video-container {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      aspect-ratio: 16 / 9; /* Automatically maintains 16:9 ratio */
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+.video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+}
+.long{
+  font-size: 25px;
+  margin-bottom: 30px;
+  
+}
+
+/* -------------------- PORTFOLIO / SHORTS -------------------- */
+/* Rules for .yt-short-frame and portfolio layout live below */
+
+.yt-short-frame {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      aspect-ratio: 9 / 16;  /* Auto height for vertical layout */
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: black;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .yt-short-frame iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+/* Center the short/frame inside its Bootstrap column only within the portfolio section */
+#portfolio .row > [class*="col-"] {
+  /* ensure only portfolio columns act as flex containers for centering child elements */
+  display: flex;
+  align-items: center; /* vertical center when column has height */
+  justify-content: center; /* horizontal center */
+}
+
+/* Keep the existing column padding behavior on small screens but ensure frame is full width */
+@media (max-width: 767.98px) {
+  .yt-short-frame {
+    width: 100%;
+    max-width: none;
+    border-radius: 8px;
+  }
+}
+
+/* Hero (home) right-video styling - keep scoped to avoid global side-effects */
+/* Hero (home) right-column styling for new col-md-6 layout */
+#home .col-md-6:last-child {
+  /* ensure the column aligns its content to the end (right) and centers vertically */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Make hero video fill most of its column while capping the maximum size */
+#home .video-container {
+  width: 100%;
+  max-width: 980px; /* larger cap for a dominant hero video */
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+}
+
+@media (min-width: 1600px) {
+  #home .video-container {
+    max-width: 1200px; /* allow bigger visual impact on ultra-wide screens */
+  }
+}
+
+@media (max-width: 1199.98px) {
+  #home .video-container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  /* Keep default behavior: hide the right video on small screens (Bootstrap handles it) */
+  #home .video-container {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.text-height{
+  margin-bottom: 5px;
+  line-height: 45px;
+}
+.yt-short-frame{
+  margin-bottom: 50px;
+}
+/* ==================================================
+  STYLES: SECTION HEADERS
+  Use these comment blocks to quickly locate major
+  style groups (Navbar, Hero, Portfolio, Video, FAQ)
+  ================================================== */
+
+/* -------------------- FAQ / MISC -------------------- */
+/* FAQ cards, accordion, and related styles live here */
+
+/* -------------------- CONTACT / FORM -------------------- */
+/* Contact layout and calendly iframe styles */
